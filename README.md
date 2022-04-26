@@ -11,6 +11,46 @@ Different NLP techniques have been applied to different datasets for sentiment a
 
 ------------
 
+### GraphStar
+GraphStar is able to map the global state effectively without incurring system overhead and heavy computation costs.
+GraphStar trains the model to: 
+- Perform inductive tasks on previously unseen graph data 
+- Aggregate both local and long-range information, making the model globally aware, extracting high-level abstraction typically not represented in individual node features
+- The relays serve as a hierarchical representation of the graphs and can be used directly for graph classification tasks.
+
+GraphStar can be used in three general graph tasks like:
+1. *Node classification*: predict a property of a node.
+2.	*Graph classification*: categorize different graphs. 
+3.	*Link prediction*: predict whether there are missing links between two nodes.
+
+### GraphStar Model Architecture:
+- Step 1: Initial Representation of the Star
+- Step 2: Real Node Update
+- Step 3: Star Update
+
+![GraphStar Model Archotecture](/Images/graphstar_arch.jpg "GraphStar Model Architecture")
+
+### Running GraphStar on IMDb:
+GraphStar propose a new method to tackle sentiment analysis based on node classification and use IMDB-binary dataset as an example. This dataset was originally 4 not a graph task; it is usually treated as a natural language processing task (NLP). 
+
+GraphStar turns the pure NLP task into a graph data task based on document embedding. First, for IMBD, the model uses a pre-trained large Bert model to document encoding, and treats every film review as a node in a graph. Then it links the nodes (film reviews) which belong to the same topic and create a graph dataset. This approach is highly generalizable to most topic-specific classification tasks.
+
+|  # Nodes  | # Features  | #Classes  |  # Training Nodes   | #Validation Nodes  | # Test Nodes |
+| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
+| 50,000  |  1024 |  2 |  23,003 (12 graphs ) | 1997 (1 graph)  | 25,000 (13 graphs) |  |  
+
+### GraphStar Accuracy:
+![GraphStar Accuracy](/Images/graphstar_acc.jpg "GraphStar Accuracy")
+
+
+
+
+
+
+
+
+
+
 
 
 
