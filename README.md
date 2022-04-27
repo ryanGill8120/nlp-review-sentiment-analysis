@@ -21,7 +21,41 @@ The topics discussed on XLNet are:
 - Novelty and Cost
 
 ### Permuting Factorizations in XLNet:
-![XLNet Permutation Example] (/Images/)
+
+![XLNet Permutation Example](/Images/XLNet Factorization.png "XLNet Permutation Example")
+
+During the tokenization of pre-training inputs using AR techniques, the model is typically allowed to view previous tokens as it makes the prediction on its current factorization. Conversely, AE techniques mask out a small percentage of tokens during the same phase of the process as the model is being trained. XLNet seeks to combine these strategies by considering *all permuations* of a given factorization.
+
+For instance using the image above, the model is allowed access to the data from the previous factorization. So when trying to predict $$x_3$$ a normal AR factorization would simply be 1 -> 2 -> 3 -> 4. However XLNet will consider all permutations for a factorization (we don't even have all of them in the image) as the prediction is passed through its layers before making a prediction for that particular node. Naturally, making a prediction given the permutation in the top-left of the image will be difficult, however, the model is allowed more data in other permutations, thereby fine-tuning its ability to make an accurate prediction.  
+
+### XLNet Model Architecture:
+
+### XLNet Results with IMDB
+
+Because of the permutative nature of the model, training the full XLNet requires significant resources (discussed in next section). So in regards to IMDB sentiment analysis, the research repository supplies a python notebook that reports the following:
+
+- *Accuracy: 92.416%*
+- *eval_loss .31708*
+
+After training with code developed in notebook setting for IMDB by Euguene Siow, the following results were achieved:
+
+- *Accuracy: 92.156%*
+- *eval_loss* .38349*
+
+The full model was tested on multiple datasets, but they reported their state-of-the-art error on IMDB as follows
+
+### Cost and Novelty of XLNet
+
+XLNet is a recent collaboration between researchers from Carnegie Mellon University and the Google AI Brain team only being published in January of 2020, this leads to a few possible pitfalls in the research:
+- *Actual Impact of the Permuatation Technique:* The model combines many different techniques from different models and even has a section in it's paper exploring how much of an impact the novel technique has
+- *Cost to Train:* As tweeted by Eugene Siow, some estimates put the cost of training the full XLNet model at a quarter of a million dollars
+- *Difficulty in Reproduction:* Because of cost and time constraints, the paper and Third-party training involve incomplete models that do not achieve full accuracy described in the research
+
+Hopefully with more time and research, XLNet can be proven as an effective and accessible NLP model.
+
+![XLNet Cost](/Images/XLNet Cost.png "XLNet Cost")
+
+------------
 
 ### GraphStar
 GraphStar is able to map the global state effectively without incurring system overhead and heavy computation costs.
