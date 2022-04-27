@@ -5,7 +5,7 @@ Different NLP techniques have been applied to different datasets for sentiment a
 ##### In this study, we will compare five NLP techniques for sentiment analysis:
 1. XLNet
 2. GraphStar
-3. BlackSparse
+3. BlockSparse
 4. Bert Large
 5. Modified LMU
 
@@ -26,7 +26,7 @@ The topics discussed on XLNet are:
 
 During the tokenization of pre-training inputs using AR techniques, the model is typically allowed to view previous tokens as it makes the prediction on its current factorization. Conversely, AE techniques mask out a small percentage of tokens during the same phase of the process as the model is being trained. XLNet seeks to combine these strategies by considering *all permuations* of a given factorization.
 
-For instance using the image above, the model is allowed access to the data from the previous factorization. So when trying to predict $$x_3$$ a normal AR factorization would simply be 1 -> 2 -> 3 -> 4. However XLNet will consider all permutations for a factorization (we don't even have all of them in the image) as the prediction is passed through its layers before making a prediction for that particular node. Naturally, making a prediction given the permutation in the top-left of the image will be difficult, however, the model is allowed more data in other permutations, thereby fine-tuning its ability to make an accurate prediction.  
+For instance using the image above, the model is allowed access to the data from the previous factorization. So when trying to predict x<sub>3</sub> a normal AR factorization would simply be 1 -> 2 -> 3 -> 4. However XLNet will consider all permutations for a factorization (we don't even have all of them in the image) as the prediction is passed through its layers before making a prediction for that particular node. Naturally, making a prediction given the permutation in the top-left of the image will be difficult, however, the model is allowed more data in other permutations, thereby fine-tuning its ability to make an accurate prediction.  
 
 ### XLNet Model Architecture:
 
@@ -89,6 +89,39 @@ GraphStar turns the pure NLP task into a graph data task based on document embed
 
 ### GraphStar Accuracy:
 ![GraphStar Accuracy](/Images/graphstar_acc.jpg "GraphStar Accuracy")
+
+------------
+
+### BlockSparse
+
+------------
+
+### BERT Large
+
+------------
+
+### Modified LMU
+
+------------
+
+### Citations
+
+### XLNet 
+
+Yang, Zhilin, et al. "Xlnet: Generalized autoregressive pretraining for language understanding." Advances in neural information processing systems 32 (2019).
+
+Turner, Elliot [@eturner303]. “Holy crap: It costs $245,000 to train the XLNet model (the one that's beating BERT on NLP tasks..512 TPU v3 chips * 2.5 days * $8 a TPU) -”. Twitter, Jun 24 2019, https://twitter.com/eturner303/status/1143174828804857856?lang=en.
+
+Sentiment_Analysis_Movie_Reviews.ipynb. @eugenesiow, commit 0ae04e7. Independent, Dec 22, 2020. GitHub
+![image](https://user-images.githubusercontent.com/78995427/165602373-76bc1ed2-e2f1-4e42-88c5-2e7c1028cdf4.png)
+
+### GraphStar
+
+### BlockSparse
+
+### BERT Large
+
+### Modified LMU
 
 
 
