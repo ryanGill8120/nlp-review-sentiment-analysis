@@ -13,7 +13,8 @@ Different NLP techniques have been applied to different datasets for sentiment a
 
 ### XLNet
 
-XLNet seeks to combine the best of Auto-Regressive (AR) and Auto-Encoded (AE) models by implementing a high-level permutation technique during pre-training which trains it into a state of capable of higher accuracy on many NLP tasks, famously being one of the first models to outcompete BERT.
+XLNet seeks to combine the best of Auto-Regressive (AR) and Auto-Encoded (AE) models by implementing a high-level permutation technique during pre-training which makes it capable of higher accuracy on many NLP tasks, famously being one of the first models to outcompete BERT.
+
 The topics discussed on XLNet are:
 - The general idea of the permuatation approach
 - Model Architecture challenges and solutions
@@ -29,6 +30,14 @@ During the tokenization of pre-training inputs using AR techniques, the model is
 For instance using the image above, the model is allowed access to the data from the previous factorization. So when trying to predict x<sub>3</sub> a normal AR factorization would simply be 1 -> 2 -> 3 -> 4. However XLNet will consider all permutations for a factorization (we don't even have all of them in the image) as the prediction is passed through its layers before making a prediction for that particular node. Naturally, making a prediction given the permutation in the top-left of the image will be difficult, however, the model is allowed more data in other permutations, thereby fine-tuning its ability to make an accurate prediction.  
 
 ### XLNet Model Architecture:
+
+In the research, almost all general architectural choices were made with hopes of using BERT models as a standard of comparison. Thus, XLNet chose not only to base their augmentation on existing BERT and AR strategies, but even implemented their model with the same number of layers as BERT.
+
+The main challenges presented by XLNet:
+- Level of permutation is costly
+- Need to make a prediction on a token while using previous factorization predictions in *only one pass through the model*
+
+Though the costliness of XLNet can really only be solved by hardware and time, the research team employed an engineering approach to solve the second problem. They call it a *Masked Two-Stream Attention* wherein they implement two hidden layers in their transformers instead of the traditional one. The difference being on (h) is initialized with the embedding of tokens at and before its position, and the second (g) is not initialized immediatly and is only allowed to look at tokens from previous layers/factorizations. 
 
 ### XLNet Results with IMDB
 
@@ -113,7 +122,6 @@ Yang, Zhilin, et al. "Xlnet: Generalized autoregressive pretraining for language
 Turner, Elliot [@eturner303]. “Holy crap: It costs $245,000 to train the XLNet model (the one that's beating BERT on NLP tasks..512 TPU v3 chips * 2.5 days * $8 a TPU) -”. Twitter, Jun 24 2019, https://twitter.com/eturner303/status/1143174828804857856?lang=en.
 
 Sentiment_Analysis_Movie_Reviews.ipynb. @eugenesiow, commit 0ae04e7. Independent, Dec 22, 2020. GitHub
-![image](https://user-images.githubusercontent.com/78995427/165602373-76bc1ed2-e2f1-4e42-88c5-2e7c1028cdf4.png)
 
 ### GraphStar
 
