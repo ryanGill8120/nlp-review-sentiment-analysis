@@ -22,7 +22,7 @@ The topics discussed on XLNet are:
 
 ### Permuting Factorizations in XLNet:
 
-![XLNet Permutation Example](/Images/XLNet Factorization.png "XLNet Permutation Example")
+![XLNet Permutation Example](/Images/XLNet_Factorization.png "XLNet Permutation Example")
 
 During the tokenization of pre-training inputs using AR techniques, the model is typically allowed to view previous tokens as it makes the prediction on its current factorization. Conversely, AE techniques mask out a small percentage of tokens during the same phase of the process as the model is being trained. XLNet seeks to combine these strategies by considering *all permuations* of a given factorization.
 
@@ -42,7 +42,9 @@ After training with code developed in notebook setting for IMDB by Euguene Siow,
 - *Accuracy: 92.156%*
 - *eval_loss* .38349*
 
-The full model was tested on multiple datasets, but they reported their state-of-the-art error on IMDB as follows
+The full model was tested on multiple datasets, but they reported their state-of-the-art error on IMDB as follows:
+
+![XLNet IMDB Error](/Images/XLNet_err.png "XLNet IMDB Error")
 
 ### Cost and Novelty of XLNet
 
@@ -53,7 +55,7 @@ XLNet is a recent collaboration between researchers from Carnegie Mellon Univers
 
 Hopefully with more time and research, XLNet can be proven as an effective and accessible NLP model.
 
-![XLNet Cost](/Images/XLNet Cost.png "XLNet Cost")
+![XLNet Cost](/Images/XLNet_Cost.png "XLNet Cost")
 
 ------------
 
