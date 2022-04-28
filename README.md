@@ -236,6 +236,19 @@ GitHub: https://github.com/graph-star-team/graph_star
 
 ### Modified LMU
 
+[PyTorch LMU github](https://github.com/hrshtv/pytorch-lmu)
+
+[Parallelizing Legendre Memory Unit Training](https://arxiv.org/pdf/2102.11417v2.pdf)
+
+Radford, A., Narasimhan, K., Salimans, T., and Sutskever, I. Improving language understanding by generative pretraining. 2018.
+
+Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W., and Liu, P. J. Exploring the limits of transfer learning with a unified text-to-text transformer. arXiv preprint arXiv:1910.10683, 2019
+
+Astrom, K. J. and Murray, R. M. ¨ Feedback systems: an introduction for scientists and engineers. Princeton university press, 2010
+
+Crankshaw, D. The Design and Implementation of LowLatency Prediction Serving Systems. PhD thesis, UC Berkeley, 2019.
+
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., and Polosukhin, I. Attention is all you need. In Advances in neural information processing systems, pp. 5998–6008, 2017.
 
 
 
