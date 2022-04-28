@@ -164,7 +164,7 @@ Inspired by the success of self-attention. Self-attention based architectures ha
 Implement a general affine transformation followed by an element-wise nonlinearity
 
 ![Model General](/Images/Modified LMU - Model General.png "Model")
-
+asdf
 
 
 
