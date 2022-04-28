@@ -165,10 +165,48 @@ Implement a general affine transformation followed by an element-wise nonlineari
 
 ![Model](https://github.com/ryanGill8120/nlp-review-sentiment-analysis/blob/cb7a78bdfc6dcd47cdb74a1c16ec56f7499719a6/Images/Modified%20LMU%20-%20Model%20General.png "Model")
 
-asdf
+1. Parallel Training:
+  One of the motivations for the above mentioned architectural changes is that the model now has only one recurrent connection: mt’s dependence on itself from the past. But because this is an LTI system, standard control theory (Astrom & Murray , 2010) gives a non-iterative way of evaluating this equation as shown below
 
+![Parallel Training](https://github.com/ryanGill8120/nlp-review-sentiment-analysis/blob/0e0e9aab9a0f527daf114241c2d62e29f7242fa6/Images/Modified%20LMU%20-%20Model%20Parallel%20Training.png "Parallel Training")
 
+  It is also evident from the structure of the U matrix that although this reformulation turns the DN into a feedforward layer, it still respects causality. In other words, the state mt depends only on the inputs seen until that point of time
 
+![Parallel Training Updated](https://github.com/ryanGill8120/nlp-review-sentiment-analysis/blob/0e0e9aab9a0f527daf114241c2d62e29f7242fa6/Images/Modified%20LMU%20-%20Model%20Parallel%20Training%202.png "Parallel Training Updated")
+
+2. Complexity: 
+  This can be made more efficient by employing the convolution theorem which gives an equivalent way of evaluating the convolution in the Fourier space as
+ 
+![Complexity](https://github.com/ryanGill8120/nlp-review-sentiment-analysis/blob/0e0e9aab9a0f527daf114241c2d62e29f7242fa6/Images/Modified%20LMU%20-%20Model%20Complexity.png "Complexity")
+ 
+  It was argued in Vaswani et al. (2017) that a self-attention layer is cheaper than an RNN when the representation dimension of the input, dx, is much greater than the length of the sequence, n, which is seen in NLP applications.
+
+3. Recurrent Inference:
+  Machine learning algorithms are usually optimized for training rather than deployment (Crankshaw, 2019), and because of that models need to be modified, sometimes non-trivially, to be more suitable for inference.
+While this model can be trained in parallel, it can also be run in an iterative manner during inference, and hence can process data in an online or streaming fashion during inference.
+
+#### Experiments
+
+In the following experiments, comparing the model against the LMU, LSTMs and transformers. 
+
+In psMNIST: as the name suggests, is constructed by permuting and then flattening the (28 × 28) MNIST images. The permutation is chosen randomly and is fixed for the duration of the task. It uses the standard 50k/10k/10k split.
+
+1. Architecture:
+Model uses 165k parameters, original LMU model, which uses 102k parameters, and the HiPPO-LegS model, which is reported to use 512 hidden dimensions
+
+2. Results & Discussion:
+Test scores of various models on this dataset are reported in the table below. Model not only surpasses the LSTM model, but also beats the current stateof-the result of 98.3% set by HiPPO-LegS (Gu et al., 2020) recently. Thus, Model sets a new state-of-the art result for RNNs of 98.49% on psMNIST. It is interesting that the model, despite being simpler than the original LMU, outperforms it on this dataset.
+
+![Results](https://github.com/ryanGill8120/nlp-review-sentiment-analysis/blob/0e0e9aab9a0f527daf114241c2d62e29f7242fa6/Images/Modified%20LMU%20-%20Experiment.png "Results")
+
+3. Additional Experiment:
+PyTorch implementations for Parallelizing Legendre Memory Unit Training on psMNIST
+
+![Additional Experiment](https://github.com/ryanGill8120/nlp-review-sentiment-analysis/blob/0e0e9aab9a0f527daf114241c2d62e29f7242fa6/Images/Modified%20LMU%20-%20Additional%20Experiment.png "Additional Experiment")
+
+#### Supplementary Materials
+
+![Supplementary Materials](https://github.com/ryanGill8120/nlp-review-sentiment-analysis/blob/0e0e9aab9a0f527daf114241c2d62e29f7242fa6/Images/Modified%20LMU%20-%20Supplementary%20Materials.png "Supplementary Materials")
 
 ------------
 
