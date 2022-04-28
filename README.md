@@ -163,7 +163,8 @@ Inspired by the success of self-attention. Self-attention based architectures ha
 
 Implement a general affine transformation followed by an element-wise nonlinearity
 
-![Model General](/Images/Modified_LMU_-_Model_General.png "Model")
+![Model](https://github.com/ryanGill8120/nlp-review-sentiment-analysis/blob/cb7a78bdfc6dcd47cdb74a1c16ec56f7499719a6/Images/Modified%20LMU%20-%20Model%20General.png "Model")
+
 asdf
 
 
