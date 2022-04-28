@@ -182,6 +182,8 @@ Implement a general affine transformation followed by an element-wise nonlineari
  - It was argued in Vaswani et al. (2017) that a self-attention layer is cheaper than an RNN when the representation dimension of the input, dx, is much greater than the length of the sequence, n, which is seen in NLP applications.
 
 3. Recurrent Inference:
+
+
 Machine learning algorithms are usually optimized for training rather than deployment (Crankshaw, 2019), and because of that models need to be modified, sometimes non-trivially, to be more suitable for inference.
 While this model can be trained in parallel, it can also be run in an iterative manner during inference, and hence can process data in an online or streaming fashion during inference.
 
