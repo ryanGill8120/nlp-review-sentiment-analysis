@@ -161,6 +161,8 @@ Turner, Elliot [@eturner303]. “Holy crap: It costs $245,000 to train the XLNet
 Sentiment_Analysis_Movie_Reviews.ipynb. @eugenesiow, commit 0ae04e7. Independent, Dec 22, 2020. GitHub
 
 ### GraphStar
+Haonan, Lu, et al. "Graph star net for generalized multi-task learning." arXiv preprint arXiv:1906.12330 (2019).
+GitHub: https://github.com/graph-star-team/graph_star
 
 ### BlockSparse
 
