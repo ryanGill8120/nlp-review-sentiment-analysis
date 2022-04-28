@@ -148,6 +148,27 @@ Accuracy on IMDb with different number of labeled examples. In the large-data re
 
 ### Modified LMU
 
+Prallelizing legendre memory unit training leverage the linear time-invariant (LTI) memory component of the LMU to construct a simplified variant that can be parallelized during training (and yet executed as an RNN during inference), thus overcoming a well known limitation of training RNNs on GPUs.
+
+#### Main Idea
+
+- Simplifying the LMU such that recurrence exists only in the linear system. 
+
+Inspired by the success of self-attention. Self-attention based architectures have come to replace RNN based approaches for problems such as language modelling, machine translation, and a slew of other NLP tasks (Radford et al., 2018; Raffel et al., 2019). Three properties that make self-attention desirable over RNNs are:
+1. it is better at handling the challenging problem of long-range dependencies; 
+2. it is purely feedforward
+3. when the sequence length is smaller than the dimension of representation
+
+#### Model
+
+Implement a general affine transformation followed by an element-wise nonlinearity
+
+![Model General](/Images/Modified LMU - Model General.png "Model")
+
+
+
+
+
 ------------
 
 ### Citations
