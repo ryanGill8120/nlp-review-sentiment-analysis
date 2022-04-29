@@ -112,11 +112,13 @@ Long Short-Term Memory (LSTM) networks are a type of recurrent neural network ca
 #### CNN+LSTM Architecture
 ![CNN+LSTM Architecture](/Images/CNN+LSTM%20architecture.png)
 
+
 #### Methodology
 To determine the accuracy of the model for polarity detection, four preprocessing data techniques are used, and they include tokenization, lowercasing, lemmatizing, and multiword grouping. Two classification models are used in this experiment. The first is the standard CNN with Rectified Linear Unit (RELU) activation function. The second model is a CNN with a recurrent layer (LSTM) with the idea of replacing multiple layers of convolution. Different datasets were used for the polarity detection but our interest is in the performance of the model on the IMDb dataset to compare the accuracy with other models. The IMDb dataset consists of 50,000 reviews split between train and test datasets and two labels of positive and negative. Table 1 below summarizes the outcome of the experiment.
 
+<img src="/Images/CNN+LSTM%20Table1.png" width="600">
 
-From table 1, The best accuracy on the IMDb dataset was gotten on the CNN+LSTM model with tokenization and multiword grouping. Also, the use of complex preprocessing techniques like lemmatization did not help in general.
+From table 1, The best accuracy on the IMDb dataset was gotten on the CNN+LSTM model, an accuracy of 88.9%, with tokenization and multiword grouping. Also, the use of complex preprocessing techniques like lemmatization did not help in general.
 
 ------------
 
@@ -239,7 +241,12 @@ Sentiment_Analysis_Movie_Reviews.ipynb. @eugenesiow, commit 0ae04e7. Independent
 Haonan, Lu, et al. "Graph star net for generalized multi-task learning." arXiv preprint arXiv:1906.12330 (2019).
 GitHub: https://github.com/graph-star-team/graph_star
 
-### BlockSparse
+### CNN+LSTM
+Camacho-Collados, J., & Pilehvar, M. T. On the Role of Text Preprocessing in Neural Network Architectures: An Evaluation Study on Text Categorization and Sentiment Analysis. arXiv 2017. arXiv preprint arXiv:1707.01780.
+
+Conneau, A., Schwenk, H., Barrault, L., & Lecun, Y. (2016). Very deep convolutional networks for text classification. arXiv preprint arXiv:1606.01781.
+
+Github: https://github.com/pedrada88/preproc-textclassification
 
 ### BERT Large
 
