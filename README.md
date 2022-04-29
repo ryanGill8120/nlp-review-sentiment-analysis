@@ -5,7 +5,7 @@ Different NLP techniques have been applied to different datasets for sentiment a
 ##### In this study, we will compare five NLP techniques for sentiment analysis on IMDb Movies Reviews Dataset:
 1. XLNet
 2. GraphStar
-3. BlockSparse
+3. CNN+LSTM
 4. Bert Large
 5. Modified LMU
 
@@ -102,6 +102,20 @@ GraphStar turns the pure NLP task into a graph data task based on document embed
 ------------
 
 ### CNN+LSTM
+Convolutional Neural Network (CNN) is a class of artificial neural network, most commonly applied to analyze visual imagery.
+CNNs have proven to be effective in a wide range of Natural Language Processing (NLP) applications like text classifications such as:
+- Topic Categorization
+- Polarity Detection
+
+Long Short-Term Memory (LSTM) networks are a type of recurrent neural network capable of learning order dependence in sequence prediction problems.
+
+#### CNN+LSTM Architecture
+
+#### Methodology
+To determine the accuracy of the model for polarity detection, four preprocessing data techniques are used, and they include tokenization, lowercasing, lemmatizing, and multiword grouping. Two classification models are used in this experiment. The first is the standard CNN with Rectified Linear Unit (RELU) activation function. The second model is a CNN with a recurrent layer (LSTM) with the idea of replacing multiple layers of convolution. Different datasets were used for the polarity detection but our interest is in the performance of the model on the IMDb dataset to compare the accuracy with other models. The IMDb dataset consists of 50,000 reviews split between train and test datasets and two labels of positive and negative. Table 1 below summarizes the outcome of the experiment.
+
+
+From table 1, The best accuracy on the IMDb dataset was gotten on the CNN+LSTM model with tokenization and multiword grouping. Also, the use of complex preprocessing techniques like lemmatization did not help in general.
 
 ------------
 
