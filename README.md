@@ -166,7 +166,7 @@ Accuracy on IMDb with different number of labeled examples. In the large-data re
 
 ### Modified LMU
 
-Prallelizing legendre memory unit training leverage the linear time-invariant (LTI) memory component of the LMU to construct a simplified variant that can be parallelized during training (and yet executed as an RNN during inference), thus overcoming a well known limitation of training RNNs on GPUs.
+Parallelizing legendre memory unit training leverage the linear time-invariant (LTI) memory component of the LMU to construct a simplified variant that can be parallelized during training (and yet executed as an RNN during inference), thus overcoming a well known limitation of training RNNs on GPUs.
 
 #### Main Idea
 
