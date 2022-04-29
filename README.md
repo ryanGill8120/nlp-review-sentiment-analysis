@@ -101,7 +101,7 @@ GraphStar turns the pure NLP task into a graph data task based on document embed
 
 ------------
 
-### BlockSparse
+### CNN+LSTM
 
 ------------
 
