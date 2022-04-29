@@ -152,7 +152,8 @@ The BERT model was fine-tuned on in-domain unsupervised data using the code rele
 - number of training steps of 30k, 100k and 300k
 
 Accuracy on IMDb with different number of labeled examples. In the large-data regime, with the full training set of IMDb, UDA also provides robust gains
-#####Accuracy with 20 labeled examples: 95.8%
+
+##### Accuracy with 20 labeled examples: 95.8%
 ![Accuracy](/Images/UDA_and_BERT_Accuracy.png "Accuracy")
 
 #### Key points of UDA model
