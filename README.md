@@ -110,6 +110,7 @@ CNNs have proven to be effective in a wide range of Natural Language Processing 
 Long Short-Term Memory (LSTM) networks are a type of recurrent neural network capable of learning order dependence in sequence prediction problems.
 
 #### CNN+LSTM Architecture
+![CNN+LSTM Architecture](/Images/CNN+LSTM%20architecture.png)
 
 #### Methodology
 To determine the accuracy of the model for polarity detection, four preprocessing data techniques are used, and they include tokenization, lowercasing, lemmatizing, and multiword grouping. Two classification models are used in this experiment. The first is the standard CNN with Rectified Linear Unit (RELU) activation function. The second model is a CNN with a recurrent layer (LSTM) with the idea of replacing multiple layers of convolution. Different datasets were used for the polarity detection but our interest is in the performance of the model on the IMDb dataset to compare the accuracy with other models. The IMDb dataset consists of 50,000 reviews split between train and test datasets and two labels of positive and negative. Table 1 below summarizes the outcome of the experiment.
